@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="utf8">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!-- highlight.js CSS -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+
+        <title>p5.js à l'Ubuntu Party !</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark mb-5">
+            <span class="navbar-brand">Découvrir p5.js</span>
+        </nav>
+
+        <div class="container">
+            <div class="shadow-sm p-3 mb-5 bg-white rounded">
+                <h4 class="card-title">Conditions (exemple)</h4>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="examplePasswd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" id="exampleButton">Voir l'indice</button>
+                    </div>
+                </div>
+                <div class="collapse" id="exampleCollapse">
+                    <pre class="mb-0"><code class="javascript">
+let x = 1;
+x = x + 2;
+if(x > 2) {
+  console.log("Salut");
+}
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery and bootstrap scripts -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <!-- highlight.js script -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        <!-- My own javascript (eventually) -->
+        <script>
+         $('#exampleButton').click(() => {
+             if($('#examplePasswd').val() == 'exemple') {
+                 $('#examplePasswd').addClass('is-valid'); $('#examplePasswd').removeClass('is-invalid');
+                 $('#exampleButton').prop('disabled', true); $('#examplePasswd').prop('readonly', true);
+                 $('#exampleCollapse').collapse();
+             }
+             else $('#examplePasswd').addClass('is-invalid');
+         });
+        </script>
+    </body>
+</html>
