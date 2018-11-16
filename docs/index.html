@@ -43,15 +43,6 @@ if(x > 2) {
         <script>hljs.initHighlightingOnLoad();</script>
 
         <!-- My own javascript (eventually) -->
-        <script>
-         $('#exampleButton').click(() => {
-             if($('#examplePasswd').val() == 'exemple') {
-                 $('#examplePasswd').addClass('is-valid'); $('#examplePasswd').removeClass('is-invalid');
-                 $('#exampleButton').prop('disabled', true); $('#examplePasswd').prop('readonly', true);
-                 $('#exampleCollapse').collapse();
-             }
-             else $('#examplePasswd').addClass('is-invalid');
-         });
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
