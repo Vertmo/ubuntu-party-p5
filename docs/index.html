@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <!-- highlight.js CSS -->
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+        <link rel="stylesheet" href="hljs-style.css">
 
         <title>p5.js à l'Ubuntu Party !</title>
     </head>
@@ -25,10 +26,12 @@
                 <div class="collapse" id="exampleCollapse">
                     <pre class="mb-0"><code class="javascript">
 let x = 1;
-x = x + 2;
+x = x + 2; // Une addition
 if(x > 2) {
   console.log("Salut");
+  x = null;
 }
+function f(x,y) { return x + y; };
                     </code></pre>
                 </div>
             </div>

@@ -1,0 +1,47 @@
+/*
+   p5.js Web Editor light theme (see https://github.com/processing/p5.js-web-editor)
+   Ported by Basile Pesin <basile.pesin@gmail.com>
+*/
+
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background-color: #FDFDFD;
+}
+
+.hljs,
+.hljs-subst {
+    color: black;
+}
+
+.hljs-keyword {
+    color: #a67f59;
+}
+
+.hljs-built_in {
+    color: #2D7BB6;
+    font-weight: bold;
+}
+
+.hljs-literal {
+    color: #d9328f;
+}
+
+.hljs-number {
+    color: #333333;
+}
+
+.hljs-string {
+    color: #58a10b;
+}
+
+.hljs-title,
+.hljs-params {
+    color: #00A1D3;
+    font-weight: normal;
+}
+
+.hljs-comment {
+    color: #a0a0a0;
+}
