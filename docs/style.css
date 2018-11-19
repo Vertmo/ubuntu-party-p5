@@ -1,0 +1,26 @@
+.bg-ubuntu {
+    background-image:-moz-linear-gradient(30deg, #77216f, #e95420);
+    background-image:-webkit-linear-gradient(30deg, #77216f, #e95420);
+    background-image:-o-linear-gradient(30deg, #77216f, #e95420);
+    background-image:linear-gradient(60deg, #77216f, #e95420);
+}
+
+.bg-ubuntu .navbar-nav .nav-link {
+    color: white;
+}
+
+.btn-ubuntu {
+    color: #e95420;
+    border-color: #e95420;
+}
+
+.btn-ubuntu:hover,
+.btn-ubuntu:active,
+.btn-ubuntu:not(:disabled):not(.disabled):active {
+    background-color: #e95420;
+    border-color: #e95420;
+}
+
+.btn-ubuntu:focus {
+    box-shadow: 0 0 0 .2rem #f4aa90
+}
