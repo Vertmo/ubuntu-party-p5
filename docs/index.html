@@ -24,35 +24,79 @@
             </ul>
         </nav>
 
-
         <div class="container">
-            <div class="alert alert-info">
-                Pour accèder aux indices ci-dessous, vous aurez besoin des mots de passe qui se trouvent dans la boite sur la table centrale. Il est d'accéder aux indices <strong>au fur et à mesure</strong> de votre progression, et donc de venir chercher un mot de passe au moment où vous en avez besoin.
+            <div class="alert alert-primary">
+                Pour accèder aux indices ci-dessous, tu auras besoin des mots de passe qui se trouvent dans la boite sur la table centrale. Il est conseillé d'accéder aux indices <strong>au fur et à mesure</strong> de votre progression, et donc de venir chercher un mot de passe au moment où vous en avez besoin.
             </div>
 
-            <div class="card">
-                <div class="card-header">Syntaxe (exemple)</div>
+            <!-- Indices -->
+            <div class="card mb-5">
+                <div class="card-header">Structure</div>
                 <div class="card-body">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="examplePasswd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" id="code1Passwd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-primary btn-ubuntu" id="exampleButton">Voir l'indice</button>
+                            <button class="btn btn-outline-primary btn-ubuntu" id="code1Button">Voir l'indice</button>
                         </div>
                     </div>
-                    <div class="collapse" id="exampleCollapse">
+                    <div class="collapse" id="code1Collapse">
                         <pre class="mb-0"><code class="javascript">
-let x = 1;
-x = x + 2; // Une addition
-if(x > 2) {
-  console.log("Salut");
-  x = null;
+function setup() {
+    // Des choses qui s'exécutent au début
 }
-function f(x,y) { return x + y; };
+
+function draw() {
+    // Des choses qui se répètent
+}
                         </code></pre>
-                        Un petit exemple de syntaxe de base de p5.js.
+                        La majorité de ton code doit être écrite dans ces deux fonctions. Le code dans setup s'exécutera une seule fois au début du programme, donc utilises le pour faire les réglages au début ! Le code de draw lui s'exécute en continu, c'est donc la que tu mettra les instructions de dessin !
                     </div>
                 </div>
             </div>
+
+            <div class="card mb-5">
+                <div class="card-header">Créer un sketch</div>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="code2Passwd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary btn-ubuntu" id="code2Button">Voir l'indice</button>
+                        </div>
+                    </div>
+                    <div class="collapse" id="code2Collapse">
+                        <pre class="mb-0"><code class="javascript">
+createCanvas(640, 480);
+                        </code></pre>
+                        Cette simple instruction permet d'ouvrir une fenêtre graphique, ou "canvas". Les deux paramètres 640 et 480 permettent de spécifier la largeur et la hauteur de la fenêtre en pixels.
+                        <div class="alert alert-info">
+                            <strong>Pour aller plus loin:</strong> le pixel est l'unité traditionnelle de taille des images en informatique. L'écran que tu regardes en ce moment possède une résolution maximum (en pixels), donc si tu regardes assez bien tu verras que l'image sur l'écran est en fait constituée de petits carrés de différentes couleurs: ce sont les pixels !
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-header">Couleurs</div>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="code3Passwd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary btn-ubuntu" id="code3Button">Voir l'indice</button>
+                        </div>
+                    </div>
+                    <div class="collapse" id="code3Collapse">
+                        <pre class="mb-0"><code class="javascript">
+stroke(0, 0, 0); // Choisir la couleur de dessin
+fill(255, 255, 255); // Choisir la couleur de remplissage
+                        </code></pre>
+                        Les deux instructions ci-dessus permettent de manipuler les couleurs : stroke permet de changer la couleur avec laquelle les formes seront dessinées (ici en noir) et fill permet de changer la couleur avec laquelle les formes seront remplies ou "coloriées" (ici en blanc).
+                        <div class="alert alert-info">
+                            <strong>Pour aller plus loin:</strong> en informatique, les couleurs sont codées au format RGB (ou Rouge Vert Bleu) : ce format est constitué de trois chiffres entre 0 et 255 indiquant les quantitées de rouge, vert et bleu dans la couleur. Par exemple <em>255 0 0</em> est rouge pur, <em>0 255 255</em> est cyan et <em>255 0 255</em> est violet. Il est important de noter que <em>0 0 0</em> est noir et <em>255 255 255</em> blanc !
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- jQuery and bootstrap scripts -->

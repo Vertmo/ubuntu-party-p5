@@ -24,3 +24,11 @@
 .btn-ubuntu:focus {
     box-shadow: 0 0 0 .2rem #f4aa90
 }
+
+.btn-ubuntu:disabled {
+    color: #e95420;
+}
+
+.btn-ubuntu:disabled:hover {
+    color: white;
+}

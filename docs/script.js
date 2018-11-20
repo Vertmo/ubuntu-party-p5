@@ -1,4 +1,6 @@
-let samples = [{ id:'example', password:'exemple' }];
+let samples = [{ id:'code1', password:'labase' },
+               { id:'code2', password:'canevas' },
+               { id:'code3', password:'feutre' }];
 
 samples.forEach(s => {
     $('#'+s.id+'Button').click(() => {
