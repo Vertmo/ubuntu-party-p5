@@ -4,7 +4,7 @@ Ce repo contient tout ce qu'il nous faut pour préparer nos animations (sur le t
 
 ## Contenus (prévus)
 * Le site "calendrier de l'avent" contenant des aides pour les participants (dans le dossier `docs`, pour pouvoir utiliser GitHub pages) **TODO - en cours**
-* De la documentation sur notre organisation **TODO**
+* De la documentation sur notre organisation
 * Les programmes p5.js utilisés (ou éventuellement les url des programmes sur l'[éditeur en ligne p5.js](https://editor.p5js.org/)) **TODO**
 
 ## Usage
