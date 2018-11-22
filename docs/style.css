@@ -32,3 +32,12 @@
 .btn-ubuntu:disabled:hover {
     color: white;
 }
+
+.nav-pills .nav-link {
+    border: 2px solid transparent;
+}
+
+.nav-pills .nav-link.active {
+    border: 2px solid;
+    background-color: transparent;
+}
