@@ -49,7 +49,7 @@ function draw() {
     // Des choses qui se répètent
 }
                         </code></pre>
-                        La majorité de ton code doit être écrite dans ces deux fonctions. Le code dans setup s'exécutera une seule fois au début du programme, donc utilises le pour faire les réglages au début ! Le code de draw lui s'exécute en continu, c'est donc la que tu mettra les instructions de dessin !
+                        La majorité de ton code doit être écrite dans ces deux fonctions. Le code dans <i>setup</i> s'exécutera une seule fois au début du programme, donc utilises le pour faire les réglages au début ! Le code de <i>draw</i> lui s'exécute en continu, c'est donc la que tu mettra les instructions de dessin !
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@ function draw() {
                         <pre class="mb-0"><code class="javascript">
 createCanvas(640, 480);
                         </code></pre>
-                        Cette simple instruction permet d'ouvrir une fenêtre graphique, ou "canvas". Les deux paramètres 640 et 480 permettent de spécifier la largeur et la hauteur de la fenêtre en pixels.
+                        Cette simple instruction permet d'ouvrir une fenêtre graphique, ou "canvas". Les deux paramètres 640 et 480 permettent de spécifier la largeur et la hauteur de la fenêtre en pixels. Cette instruction ne doit être exécutée qu'une seule fois, c'est pour cela qu'elle est placée dans <i>setup</i>.
                         <div class="alert alert-info">
                             <strong>Pour aller plus loin:</strong> le pixel est l'unité traditionnelle de taille des images en informatique. L'écran que tu regardes en ce moment possède une résolution maximum (en pixels), donc si tu regardes assez bien tu verras que l'image sur l'écran est en fait constituée de petits carrés de différentes couleurs: ce sont les pixels !
                         </div>
@@ -97,6 +97,87 @@ fill(255, 255, 255); // Choisir la couleur de remplissage
                 </div>
             </div>
 
+            <div class="card mb-5">
+                <div class="card-header">Dessiner des formes</div>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="code4Passwd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary btn-ubuntu" id="code4Button">Voir l'indice</button>
+                        </div>
+                    </div>
+                    <div class="collapse" id="code4Collapse">
+                        <pre class="mb-0"><code class="javascript">
+ellipse(50, 50, 80, 80); // Dessiner une ellipse en haut à gauche
+ellipse(mouseX, mouseY, 80, 80); // Dessiner une ellipse sur le curseur de la souris
+                        </code></pre>
+                        L'instruction <i>ellipse(x, y, r1, r2)</i> permet comme son nom l'indique de dessiner une ellipse. En particulier, un cercle est une ellipse avec <i>r1</i> et <i>r2</i> égaux. Les deux premiers paramètres (<i>x</i> et <i>y</i>) contrôlent où l'ellipse sera dessinée sur l'écran, et <i>r1</i> et <i>r2</i> contrôlent la taille de l'ellipse. Fait varier les paramètres de la première instruction pour voir les changement !<br/>
+                        La deuxième version de l'instruction (que tu devra utiliser pour compléter ton projet) dessine l'ellipse là ou pointe ta souris.
+                        <div class="alert alert-info">
+                            <strong>Pour aller plus loin:</strong> bien sur, il y a beaucoup d'autres formes que tu peux dessiner ! Experimentes avec <i>rect(120, 70, 40, 80);</i> ou <i>triangle(30, 75, 58, 20, 86, 75);</i> et essaie de comprendre comment ces instructions fonctionnent !
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-header">Conditions</div>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="code5Passwd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary btn-ubuntu" id="code5Button">Voir l'indice</button>
+                        </div>
+                    </div>
+                    <div class="collapse" id="code5Collapse">
+                        <pre class="mb-0"><code class="javascript">
+if(mouseIsPressed) {
+  // Ce code sera exécuté si le bouton de la souris est pressé
+} else {
+  // Celui la sera exécuté si il n'est pas pressé
+}
+                        </code></pre>
+                        La structure <i>if...else</i> te permet d'accomplir une action ou une autre en fonction d'une condition. Ici le code dans <i>if() { ... }</i> s'exécutera quand tu appuieras sur le bouton de ta souris, et le code dans <i>else { ... }</i> quand tu n'appuieras pas. Bien sur pour voir la différence, il faudra que le <i>if...else</i> s'exécute plusieurs fois, donc essaie de le placer dans <i>draw</i>.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-body">
+                    Tu sais tout ce dont tu as besoin pour réaliser ton projet ! Essaie de combiner les éléments ci-dessus pour reproduire l'exemple montré au début de la séance.<br/>
+                    Si tu es vraiment trop en difficulté, un dernier mot de passe te donnera accès à la solution ci-dessous, mais essaie de la chercher par toi même d'abord !
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-header">Solution complète</div>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="code6Passwd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-primary btn-ubuntu" id="code6Button">Voir l'indice</button>
+                        </div>
+                    </div>
+                    <div class="collapse" id="code6Collapse">
+                        <pre class="mb-0"><code class="javascript">
+function setup() {
+  createCanvas(640, 480);
+}
+
+function draw() {
+  if(mouseIsPressed) {
+    fill(0, 0, 0);
+  } else {
+    fill(255, 255, 255);
+  }
+  ellipse(mouseX, mouseY, 80, 80);
+}
+                        </code></pre>
+                        Tu peux voir le code en action à cette adresse : <a href="https://editor.p5js.org/Vertmo/sketches/Skn_x_VAX">https://editor.p5js.org/Vertmo/sketches/Skn_x_VAX</a>.
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- jQuery and bootstrap scripts -->
@@ -106,6 +187,7 @@ fill(255, 255, 255); // Choisir la couleur de remplissage
         <!-- highlight.js script -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
+
 
         <!-- My own javascript (eventually) -->
         <script src="script.js"></script>
