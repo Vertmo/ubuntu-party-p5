@@ -20,3 +20,23 @@ samples.forEach(s => {
         else $('#'+s.id+'Passwd').addClass('is-invalid');
     });
 })
+
+let cp = ColorPicker(
+    document.getElementById('slide'),
+    document.getElementById('picker'),
+    (hex, hsv, rgb) => {
+        $('#colorR').val('r: '+rgb.r);
+        $('#colorG').val('g: '+rgb.b);
+        $('#colorB').val('b: '+rgb.g);
+        $('.colorDisplay').each(function(i, obj) {
+            $(obj).css('background-color', hex);
+            if(rgb.r + rgb.b + rgb.g > 3*255/2) {
+                $(obj).css('color', '#000000');
+            } else {
+                $(obj).css('color', '#ffffff');
+            }
+        });
+    }
+);
+
+cp.setRgb({ r: 233, g: 84, b:32 });

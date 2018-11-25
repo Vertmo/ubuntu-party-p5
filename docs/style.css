@@ -41,3 +41,29 @@
     border: 2px solid;
     background-color: transparent;
 }
+
+#picker {
+    width: 200px;
+    height: 200px;
+}
+
+#slide {
+    width: 30px;
+    height: 200px;
+}
+
+.colorDisplay {
+    width: 74px;
+}
+
+#colorR {
+    border-color: red;
+}
+
+#colorG {
+    border-color: green;
+}
+
+#colorB {
+    border-color: blue;
+}
