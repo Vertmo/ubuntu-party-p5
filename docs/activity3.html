@@ -38,7 +38,7 @@
             <div class="alert alert-primary">
                 Lors de cette activité, tu vas pouvoir apporter des modifications au jeu Flappy Smile que j'ai réalisé, et qui n'est pour le moment pas le jeu de l'année. Je compte sur toi pour améliorer le jeu et le rendre plus amusant !<br/>
                 Tu peux accéder au jeu à cette adresse : <a href="https://editor.p5js.org/Vertmo/sketches/rydjVgRnm">https://editor.p5js.org/Vertmo/sketches/rydjVgRnm</a>, mais tu devrais normalement déjà avoir un onglet ouvert. Commence par tester le jeu (en cliquant sur le bouton play en haut à gauche, puis en cliquant dans la fenètre de jeu. Tu peux faire monter ton smiley en appuyant sur la flêche du haut de ton clavier: essaie d'éviter les murs !<br/>
-                Maintenant que tu as une idée du jeu (et de ses défauts) tu peux choisir une des améliorations à réaliser dans la liste ci-dessous; ne t'en fais pas, tu sera guidé pour chaque amélioration. Tu devrais commencer par une amélioration de la catégorie <a href="#pourCommencer">Pour commencer</a>, puis si tu as le temps une de la catégorie <a href="#plusDif">Plus difficile</a>.
+                Maintenant que tu as une idée du jeu (et de ses défauts) tu peux choisir une des améliorations à réaliser dans la liste ci-dessous; ne t'en fais pas, tu sera guidé pour chaque amélioration. Je te conseille de commencer par les améliorations de la catégorie <a href="#pourCommencer">Pour commencer</a>, puis si tu as le temps, essaie une de la catégorie <a href="#plusDif">Plus difficile</a>.
             </div>
 
 
@@ -46,7 +46,7 @@
             <hr/>
             <section>
                 <div class="card mb-5">
-                    <div class="card-header">Design et couleurs</div>
+                    <div class="card-header">Couleurs et dessin</div>
                     <div class="card-body">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" id="act31Passwd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
@@ -61,7 +61,7 @@ background(r, g, b); // Change la couleur du fond
 stroke(r, g, b); // Change la couleur de dessin
 fill(r, g, b); // Change la couleur de coloriage
                             </code></pre>
-                            <div style="text-align: center">
+                            <div class="mb-3" style="text-align: center">
                             Tu peux utilise le sélecteur ci-dessous pour choisir une couleur:<br/>
                                 <div style="display: flex; justify-content:center">
                                     <div id="picker" class="picker"></div>
@@ -73,12 +73,27 @@ fill(r, g, b); // Change la couleur de coloriage
                                     <input readonly id="colorB" class="colorDisplay">
                                 </div>
                             </div>
+                            <div class="alert alert-info">
+                                <strong>Pour aller plus loin:</strong> en informatique, les couleurs sont codées au format RGB (ou Rouge Vert Bleu) : ce format est constitué de trois chiffres entre 0 et 255 indiquant les quantitées de rouge, vert et bleu dans la couleur. Par exemple <em>255 0 0</em> est rouge pur, <em>0 255 255</em> est cyan et <em>255 0 255</em> est violet. Il est important de noter que <em>0 0 0</em> est noir et <em>255 255 255</em> blanc !
+                            </div>
+                            Tu pourrais également modifier l'apparence du smiley que tu joues. Pour cela je te conseille de modifier la partie:
+                            <pre class="mb-0"><code class="javascript">
+function dessinerSmiley(x, y) {
+  fill(255,255,0);
+  ellipse(x, y, 20, 20);
+  noFill();
+  line(x, y-3, x, y);
+  line(x+4, y-3, x+4, y);
+  arc(x+2, y+2, 10, 10, 0, PI);
+}
+                            </code></pre>
+                            Tu pourrais par exemple remplacer <i>ellipse(x, y, 20, 20)</i> par <i>rect(x-10, y-10, 20, 20)</i> pour lui faire la tête au carré ! Ou bien remplacer <i>arc(x+2, y+2, 10, 10, 0, PI)</i> par <i>arc(x+2, y+7, 10, 10, PI, 0)</i> pour le rendre triste :(
                         </div>
                     </div>
                 </div>
 
                 <div class="card mb-5">
-                    <div class="card-header">Difficulté du jeu (taille du trou et vitesse des murs)</div>
+                    <div class="card-header">Difficulté du jeu (vitesse des murs et taille du trou)</div>
                     <div class="card-body">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" id="act32Passwd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
@@ -87,7 +102,20 @@ fill(r, g, b); // Change la couleur de coloriage
                             </div>
                         </div>
                         <div class="collapse" id="act32Collapse">
+                            Tu as plusieurs solutions pour modifier la difficulté du jeu: tu pourrais par exemple essayer de diminuer la vitesse à laquelle les murs arrivent vers toi. Je te conseille dans ce cas de modifier la partie:
                             <pre class="mb-0"><code class="javascript">
+function majMurs() {
+  [...]
+  murs[i][0] -= 8;
+  [...]
+}
+                            </code></pre>
+                            Une autre solution que tu pourrais utiliser pour rendre le jeu plus ou moins facile, serait de modifier la taille du trou central par lequel ton personnage doit passer. Pour cela essaie de modifier la partie:
+                            <pre class="mb-0"><code class="javascript">
+function genMur() {
+  [...]
+  append(murs, [width+30, r, 80]); // x, centre, hauteur (du trou)
+}
                             </code></pre>
                         </div>
                     </div>
