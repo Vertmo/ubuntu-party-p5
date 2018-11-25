@@ -136,7 +136,23 @@ function genMur() {
                             </div>
                         </div>
                         <div class="collapse" id="act33Collapse">
+                            Si tu veux ajouter un score, il va falloir faire deux choses: trouver un moyen de comptabiliser ce score, et d'afficher ce score. Commence par ajouter une variable "score" au début du programme:
                             <pre class="mb-0"><code class="javascript">
+var score = 0;
+                            </code></pre>
+                            Comme tu peux le voir, le score est initialisé à 0: nous allons maintenant ajouter une instruction pour augmenter le score au cours de la partie. Tu devrais ajouter cette instruction quelque part dans la fonction <i>draw()</i>, pour qu'elle soit exécutée régulièrement.
+                            <pre class="mb-0"><code class="javascript">
+score++;
+                            </code></pre>
+                            Maintenant, nous voulons afficher ton score ! A la fin de la fonction <i>draw()</i>, ajoute ces trois instructions :
+                            <pre class="mb-0"><code class="javascript">
+fill(0,0,0);
+textSize(32);
+text(score, 500, 30);
+                            </code></pre>
+                            Si tu lances le jeu maintenant, tu verra qu'il y a bien un score affiché dans le coin en haut a gauche ! Cela dit, il manque toujours un petit détail : quand le joueur perd, nous voudrions que le score soit réinitialisé. Pour cela tu peux ajouter l'instruction ci-dessous à la fonction <i>perdre()</i>: elle remettra ton score à 0.
+                            <pre class="mb-0"><code class="javascript">
+score = 0;
                             </code></pre>
                         </div>
                     </div>
