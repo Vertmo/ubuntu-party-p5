@@ -184,8 +184,18 @@ score = 0;
                             </div>
                         </div>
                         <div class="collapse" id="act35Collapse">
+                            Dans cette partie, tu vas ajouter un son qui sera joué quand la partie est perdue ! Le fichier contenant le son à déjà été ajouté au projet, donc tu as juste besoin de le charger. Pour cela, ajoute les instructions suivantes au début du code:
                             <pre class="mb-0"><code class="javascript">
+var gameover;
+function preload() {
+  gameover = loadSound('assets/game-over.wav');
+}
                             </code></pre>
+                            Après avoir ajouté ces lignes, tu remarquera que si tu relances le programme, il affiche "loading" avant de lancer le jeu. Cela signifie que le programme est en train de charger le fichier. Par contre, le son ne se joue pas: on n'a pas encore ajouté l'instruction qui lance le son. Ajoute donc dans la fonction <i>perdre()</i> le code ci-dessous:
+                            <pre class="mb-0"><code class="javascript">
+gameover.play();
+                            </code></pre>
+                            Maintenant, re-lance le jeu, et tu verra que le son joue quand tu perds le jeu ! Quel son agréable n'est-ce pas ?
                         </div>
                     </div>
                 </div>
