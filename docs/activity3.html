@@ -142,17 +142,28 @@ var score = 0;
                             </code></pre>
                             Comme tu peux le voir, le score est initialisé à 0: nous allons maintenant ajouter une instruction pour augmenter le score au cours de la partie. Tu devrais ajouter cette instruction quelque part dans la fonction <i>draw()</i>, pour qu'elle soit exécutée régulièrement.
                             <pre class="mb-0"><code class="javascript">
-score++;
+function draw() {
+  [...]
+  score++;
+  [...]
+}
                             </code></pre>
                             Maintenant, nous voulons afficher ton score ! A la fin de la fonction <i>draw()</i>, ajoute ces trois instructions :
                             <pre class="mb-0"><code class="javascript">
-fill(0,0,0);
-textSize(32);
-text(score, 500, 30);
+function draw() {
+  [...]
+  fill(0,0,0);
+  textSize(32);
+  text(score, 500, 30);
+}
                             </code></pre>
                             Si tu lances le jeu maintenant, tu verra qu'il y a bien un score affiché dans le coin en haut a gauche ! Cela dit, il manque toujours un petit détail : quand le joueur perd, nous voudrions que le score soit réinitialisé. Pour cela tu peux ajouter l'instruction ci-dessous à la fonction <i>perdre()</i>: elle remettra ton score à 0.
                             <pre class="mb-0"><code class="javascript">
-score = 0;
+function perdre() {
+  [...]
+  score = 0;
+  [...]
+}
                             </code></pre>
                         </div>
                     </div>
@@ -168,8 +179,35 @@ score = 0;
                             </div>
                         </div>
                         <div class="collapse" id="act34Collapse">
+                            Tu vas commencer par ajouter une variable qui permettra au programme de garder en mémoire l'état actuel. Pour cela ajoute au début du programme :
                             <pre class="mb-0"><code class="javascript">
+var ecart;
                             </code></pre>
+                            Ensuite, nous voulons donner au programme la valeur de départ de l'écart. Pour que le jeu ne soit pas trop difficile, nous allons prendre un écart assez grand, par exemple 140. Ajoute l'instruction suivante dans ta fonction <i>setup()</i> pour régler l'écart au début du programme :
+                            <pre class="mb-0"><code class="javascript">
+function setup() {
+  [...]
+  ecart = 140;
+}
+                            </code></pre>
+                            N'oublions pas que nous voulons aussi faire évoluer cet écart au cours de la partie ! Pour cela nous devons ajouter une instruction modifiant la valeur de l'écart dans la fonction <i>draw()</i> pour qu'elle soit appelée en continu (nous n'allons diminuer la valeur de l'écart que d'un petit peu à chaque instant, pour ne pas que les trous deviennent trop petits trop vite):
+                            <pre class="mb-0"><code class="javascript">
+function draw() {
+  [...]
+  ecart -= 0.05;
+}
+                            </code></pre>
+                            Si tu testes le code maintenant, tu t'apercevra que ... rien n'a changé. C'est parce que nous n'avons pas encore utilisé cetta valeur d'écart que nous avons ajouté pour réellement influencer le programme. Pour changer cela, nous allons modifier la partie du code qui crée de nouveaux murs: la fonction <i>genMur()</i>. Et pour rendre les choses plus intéressante, nous allons ajouter un peu d'aléatoire ! Modifie le code de la fonction <i>genMur()</i> comme suit:
+                            <pre class="mb-0"><code class="javascript">
+function genMur() {
+  let r = random(50, height-50);
+  append(murs, [width+30, r, random(ecart, ecart+20)]); // x, centre, hauteur (du trou)
+}
+                            </code></pre>
+                            <div class="alert alert-info">
+                                <strong>Pour aller plus loin:</strong> l'aléatoire est ce qui ne peut pas être prévue (la face sur laquelle tombera un dé, la carte de jeu que tu vas tirer...). En informatique, générer de l'aléatoire "artificiel" est difficile (pour de multiples raisons) mais on y arrive quand même, ce qui nous permet d'offir des fonctions comme <i>random(min, max)</i> qui choisit une valeur au hasard entre min et max.
+                            </div>
+                            Et voila ! Si tu relances le jeu, tu te rendra compte que la taille des trous varies avec le temps, mais que parfois elle grandit à nouveau, grâce aux variations de <i>random()</i>. Tu peux si tu veux continuer de modifier les différentes valeurs introduites dans cette partie pour rendre le jeu plus ou moins difficile, à ta guise !
                         </div>
                     </div>
                 </div>
