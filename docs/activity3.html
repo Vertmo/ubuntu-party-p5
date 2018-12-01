@@ -36,8 +36,8 @@
 
         <div class="container">
             <div class="alert alert-primary">
-                Lors de cette activité, tu vas pouvoir apporter des modifications au jeu Flappy Smile que j'ai réalisé, et qui n'est pour le moment pas le jeu de l'année. Je compte sur toi pour améliorer le jeu et le rendre plus amusant !<br/>
-                Tu peux accéder au jeu à cette adresse : <a href="https://editor.p5js.org/Vertmo/sketches/rydjVgRnm">https://editor.p5js.org/Vertmo/sketches/rydjVgRnm</a>, mais tu devrais normalement déjà avoir un onglet ouvert. Commence par tester le jeu (en cliquant sur le bouton play en haut à gauche, puis en cliquant dans la fenètre de jeu. Tu peux faire monter ton smiley en appuyant sur la flêche du haut de ton clavier: essaie d'éviter les murs !<br/>
+                Lors de cette activité, ta mission sera d'apporter des modifications au jeu Flappy Smile que j'ai réalisé, pour  le rendre plus joli, plus amusant, et surtout qu'il convienne à tes gouts particuliers. N'hésite pas à exprimer toute ta créativité !<br/>
+                Tu peux accéder au jeu à cette adresse : <a href="https://editor.p5js.org/Vertmo/sketches/rydjVgRnm">https://editor.p5js.org/Vertmo/sketches/rydjVgRnm</a>, mais tu devras normalement déjà avoir un onglet ouvert. Commence par tester le jeu (en cliquant sur le bouton play en haut à gauche, puis en cliquant sur l'image. Fait monter ton smiley en appuyant sur la flèche du haut de ton clavier, et essaie d'éviter les murs !<br/>
                 Maintenant que tu as une idée du jeu (et de ses défauts) tu peux choisir une des améliorations à réaliser dans la liste ci-dessous; ne t'en fais pas, tu sera guidé pour chaque amélioration. Je te conseille de commencer par les améliorations de la catégorie <a href="#pourCommencer">Pour commencer</a>, puis si tu as le temps, essaie une de la catégorie <a href="#plusDif">Plus difficile</a>.
             </div>
 
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                         <div class="collapse" id="act31Collapse">
-                            Dans cette partie, ton but sera de modifier les couleurs et le visuel du jeu. Pour se faire, tu pourra utiliser les deux fonctions ci dessous pour manipuler les couleurs. Essaie de trouver ces fonctions dans le code et de les modifier pour changer les couleurs affichées.
+                            Dans cette partie, ton but sera de <b>modifier les couleurs</b> et le visuel du jeu. Pour se faire, tu pourra utiliser les trois blocs de code ci dessous pour manipuler les couleurs. Essaie de trouver ces blocs de code dans le code et de les modifier pour changer les couleurs affichées.
                             <pre class="mb-0"><code class="javascript">
 background(r, g, b); // Change la couleur du fond
 stroke(r, g, b); // Change la couleur de dessin
@@ -136,19 +136,19 @@ function genMur() {
                             </div>
                         </div>
                         <div class="collapse" id="act33Collapse">
-                            Si tu veux ajouter un score, il va falloir faire deux choses: trouver un moyen de comptabiliser ce score, et d'afficher ce score. Commence par ajouter une variable "score" au début du programme:
+                            Si tu veux ajouter un score, il va falloir faire deux choses: trouver un moyen de comptabiliser ce score, et d'afficher ce score. Commence par ajouter une variable "score" au début du programme (avant <i>setup()</i>):
                             <pre class="mb-0"><code class="javascript">
 var score = 0;
                             </code></pre>
-                            Comme tu peux le voir, le score est initialisé à 0: nous allons maintenant ajouter une instruction pour augmenter le score au cours de la partie. Tu devrais ajouter cette instruction quelque part dans la fonction <i>draw()</i>, pour qu'elle soit exécutée régulièrement.
+                            Comme tu peux le voir, le score est initialisé à 0: nous allons maintenant ajouter une instruction pour augmenter le score au cours de la partie. Tu devras ajouter cette instruction, qui ajoute 1 point au score, quelque part dans le bloc de code <i>draw()</i>, pour qu'elle soit exécutée régulièrement.
                             <pre class="mb-0"><code class="javascript">
 function draw() {
   [...]
-  score++;
+  score = score + 1; // N'importe ou dans draw() !
   [...]
 }
                             </code></pre>
-                            Maintenant, nous voulons afficher ton score ! A la fin de la fonction <i>draw()</i>, ajoute ces trois instructions :
+                            Maintenant, nous voulons afficher ton score ! A la fin de le bloc de code <i>draw()</i>, ajoute ces trois instructions :
                             <pre class="mb-0"><code class="javascript">
 function draw() {
   [...]
@@ -157,7 +157,7 @@ function draw() {
   text(score, 500, 30);
 }
                             </code></pre>
-                            Si tu lances le jeu maintenant, tu verra qu'il y a bien un score affiché dans le coin en haut a gauche ! Cela dit, il manque toujours un petit détail : quand le joueur perd, nous voudrions que le score soit réinitialisé. Pour cela tu peux ajouter l'instruction ci-dessous à la fonction <i>perdre()</i>: elle remettra ton score à 0.
+                            Si tu lances le jeu maintenant, tu verra qu'il y a bien un score affiché dans le coin en haut a gauche ! Cela dit, il manque toujours un petit détail : quand le joueur perd, nous voudrions que le score soit réinitialisé. Pour cela tu peux ajouter l'instruction ci-dessous à le bloc de code <i>perdre()</i>: elle remettra ton score à 0.
                             <pre class="mb-0"><code class="javascript">
 function perdre() {
   [...]
@@ -179,25 +179,25 @@ function perdre() {
                             </div>
                         </div>
                         <div class="collapse" id="act34Collapse">
-                            Tu vas commencer par ajouter une variable qui permettra au programme de garder en mémoire l'état actuel. Pour cela ajoute au début du programme :
+                            Tu vas commencer par ajouter une variable qui permettra au programme de garder en mémoire l'état actuel. Pour cela ajoute au début du programme (avant <i>setup()</i>):
                             <pre class="mb-0"><code class="javascript">
 var ecart;
                             </code></pre>
-                            Ensuite, nous voulons donner au programme la valeur de départ de l'écart. Pour que le jeu ne soit pas trop difficile, nous allons prendre un écart assez grand, par exemple 140. Ajoute l'instruction suivante dans ta fonction <i>setup()</i> pour régler l'écart au début du programme :
+                            Ensuite, nous voulons donner au programme la valeur de départ de l'écart. Pour que le jeu ne soit pas trop difficile, nous allons prendre un écart assez grand, par exemple 140. Ajoute l'instruction suivante dans le bloc de code <i>setup()</i> pour régler l'écart au début du programme :
                             <pre class="mb-0"><code class="javascript">
 function setup() {
   [...]
   ecart = 140;
 }
                             </code></pre>
-                            N'oublions pas que nous voulons aussi faire évoluer cet écart au cours de la partie ! Pour cela nous devons ajouter une instruction modifiant la valeur de l'écart dans la fonction <i>draw()</i> pour qu'elle soit appelée en continu (nous n'allons diminuer la valeur de l'écart que d'un petit peu à chaque instant, pour ne pas que les trous deviennent trop petits trop vite):
+                            N'oublions pas que nous voulons aussi faire évoluer cet écart au cours de la partie ! Pour cela nous devons ajouter une instruction modifiant la valeur de l'écart dans le bloc de code <i>draw()</i> pour qu'elle soit appelée en continu (nous n'allons diminuer la valeur de l'écart que d'un petit peu à chaque instant, pour ne pas que les trous deviennent trop petits trop vite):
                             <pre class="mb-0"><code class="javascript">
 function draw() {
   [...]
   ecart -= 0.05;
 }
                             </code></pre>
-                            Si tu testes le code maintenant, tu t'apercevra que ... rien n'a changé. C'est parce que nous n'avons pas encore utilisé cetta valeur d'écart que nous avons ajouté pour réellement influencer le programme. Pour changer cela, nous allons modifier la partie du code qui crée de nouveaux murs: la fonction <i>genMur()</i>. Et pour rendre les choses plus intéressante, nous allons ajouter un peu d'aléatoire ! Modifie le code de la fonction <i>genMur()</i> comme suit:
+                            Si tu testes le code maintenant, tu t'apercevra que ... rien n'a changé. C'est parce que nous n'avons pas encore utilisé cetta valeur d'écart que nous avons ajouté pour réellement influencer le programme. Pour changer cela, nous allons modifier la partie du code qui crée de nouveaux murs: le bloc de code <i>genMur()</i>. Et pour rendre les choses plus intéressante, nous allons ajouter un peu d'aléatoire ! Modifie le code de le bloc de code <i>genMur()</i> comme suit:
                             <pre class="mb-0"><code class="javascript">
 function genMur() {
   let r = random(50, height-50);
@@ -205,7 +205,7 @@ function genMur() {
 }
                             </code></pre>
                             <div class="alert alert-info">
-                                <strong>Pour aller plus loin:</strong> l'aléatoire est ce qui ne peut pas être prévue (la face sur laquelle tombera un dé, la carte de jeu que tu vas tirer...). En informatique, générer de l'aléatoire "artificiel" est difficile (pour de multiples raisons) mais on y arrive quand même, ce qui nous permet d'offir des fonctions comme <i>random(min, max)</i> qui choisit une valeur au hasard entre min et max.
+                                <strong>Pour aller plus loin:</strong> l'aléatoire est ce qui ne peut pas être prévue (la face sur laquelle tombera un dé, la carte de jeu que tu vas tirer...). En informatique, générer de l'aléatoire "artificiel" est difficile (pour de multiples raisons) mais on y arrive quand même, ce qui nous permet d'offir des blocs de code comme <i>random(min, max)</i> qui choisit une valeur au hasard entre min et max.
                             </div>
                             Et voila ! Si tu relances le jeu, tu te rendra compte que la taille des trous varies avec le temps, mais que parfois elle grandit à nouveau, grâce aux variations de <i>random()</i>. Tu peux si tu veux continuer de modifier les différentes valeurs introduites dans cette partie pour rendre le jeu plus ou moins difficile, à ta guise !
                         </div>
@@ -229,7 +229,7 @@ function preload() {
   gameover = loadSound('assets/game-over.wav');
 }
                             </code></pre>
-                            Après avoir ajouté ces lignes, tu remarquera que si tu relances le programme, il affiche "loading" avant de lancer le jeu. Cela signifie que le programme est en train de charger le fichier. Par contre, le son ne se joue pas: on n'a pas encore ajouté l'instruction qui lance le son. Ajoute donc dans la fonction <i>perdre()</i> le code ci-dessous:
+                            Après avoir ajouté ces lignes, tu remarquera que si tu relances le programme, il affiche "loading" avant de lancer le jeu. Cela signifie que le programme est en train de charger le fichier. Par contre, le son ne se joue pas: on n'a pas encore ajouté l'instruction qui lance le son. Ajoute donc dans le bloc de code <i>perdre()</i> le code ci-dessous:
                             <pre class="mb-0"><code class="javascript">
 gameover.play();
                             </code></pre>
@@ -249,6 +249,7 @@ gameover.play();
         <!-- highlight.js script -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
+
         <!-- FlexiColorPicker -->
         <script src="FlexiColorPicker/colorpicker.min.js"></script>
 

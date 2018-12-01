@@ -5,6 +5,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <!-- highlight.js CSS -->
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css">
+        <!-- FlexiColorPicker CSS -->
+        <link rel="stylesheet" href="FlexiColorPicker/themes.css">
         <!-- My own styles -->
         <link rel="stylesheet" href="hljs-style.css">
         <link rel="stylesheet" href="style.css">
@@ -35,6 +37,7 @@
         <div class="container">
             <div class="alert alert-primary">
                 Ta mission (si toutefois tu l'acceptes) : recréer le programme montré au début de la séance. Pour rappel, tu dois en déplaçant ta souris déplacer un cercle, qui dois changer de couleur si tu appuies sur le bouton de ta souris.<br/>
+                Tu peux commencer à travailler sur le programme vide à cette adresse : <a href="https://editor.p5js.org/Vertmo/sketches/ByrIfUgk4">https://editor.p5js.org/Vertmo/sketches/ByrIfUgk4</a><br/>
                 Pour t'aider, tu pourras utiliser les indices ci-dessous. Pour y accéder, tu auras besoin des mots de passe qui se trouvent dans la boite sur la table centrale. Il est conseillé d'accéder aux indices <strong>au fur et à mesure</strong> de ta progression, et donc de venir chercher un mot de passe au moment où tu en as besoin.
             </div>
 
@@ -58,7 +61,7 @@ function draw() {
     // Des choses qui se répètent
 }
                         </code></pre>
-                        La majorité de ton code doit être écrite dans ces deux fonctions. Le code dans <i>setup</i> s'exécutera une seule fois au début du programme, donc utilises le pour faire les réglages au début ! Le code de <i>draw</i> lui s'exécute en continu, c'est donc la que tu mettra les instructions de dessin !
+                        La majorité de ton code doit être écrite dans ces deux blocs de code. Le code dans <i>setup</i> s'exécutera une seule fois au début du programme, donc utilises le pour faire les réglages au début ! Le code de <i>draw</i> lui se répète jusqu'a ce que tu stoppes le programme, et permettra de dessiner les ronds. C'est donc la que tu mettras les instructions de dessin !
                     </div>
                 </div>
             </div>
@@ -76,9 +79,13 @@ function draw() {
                         <pre class="mb-0"><code class="javascript">
 createCanvas(640, 480);
                         </code></pre>
-                        Cette simple instruction permet d'ouvrir une fenêtre graphique, ou "canvas". Les deux paramètres 640 et 480 permettent de spécifier la largeur et la hauteur de la fenêtre en pixels. Cette instruction ne doit être exécutée qu'une seule fois, c'est pour cela qu'elle est placée dans <i>setup</i>.
+                        Cette simple instruction permet d'ouvrir une animation, ou "canvas". Les deux paramètres 640 et 480 permettent de spécifier la largeur et la hauteur de l'image animée en pixels. Cette instruction ne doit être exécutée qu'une seule fois, c'est pour cela qu'elle est placée dans <i>setup</i>.
                         <div class="alert alert-info">
-                            <strong>Pour aller plus loin:</strong> le pixel est l'unité traditionnelle de taille des images en informatique. L'écran que tu regardes en ce moment possède une résolution maximum (en pixels), donc si tu regardes assez bien tu verras que l'image sur l'écran est en fait constituée de petits carrés de différentes couleurs: ce sont les pixels !
+                            <strong>Pour aller plus loin:</strong> le pixel est l'unité traditionnelle de taille des images en informatique. L'écran que tu regardes en ce moment possède une résolution maximum (en pixels), donc si tu regardes assez bien tu verras que l'image sur l'écran est en fait constituée de petits carrés de différentes couleurs: ce sont les pixels. Ci-dessous, une illustration de la différence que le nombre de pixel fait : plus une image a de pixel, plus elle est détaillée.<br/>
+                            <div style="display: flex; justify-content: space-between">
+                                <img src="hab.jpg" alt="hot air balloons" width="480">
+                                <img src="hab-pixel.jpg" alt="pixelated hot air balloons" width="480">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -99,6 +106,18 @@ stroke(0, 0, 0); // Choisir la couleur de dessin
 fill(255, 255, 255); // Choisir la couleur de remplissage
                         </code></pre>
                         Les deux instructions ci-dessus permettent de manipuler les couleurs : stroke permet de changer la couleur avec laquelle les formes seront dessinées (ici en noir) et fill permet de changer la couleur avec laquelle les formes seront remplies ou "coloriées" (ici en blanc).
+                        <div class="mb-3" style="text-align: center">
+                            Tu peux utilise le sélecteur ci-dessous pour choisir une couleur:<br/>
+                            <div style="display: flex; justify-content:center">
+                                <div id="picker" class="picker"></div>
+                                <div id="slide" class="slide"></div>
+                            </div>
+                            <div style="clear:both">
+                                <input readonly id="colorR" class="colorDisplay">
+                                <input readonly id="colorG" class="colorDisplay">
+                                <input readonly id="colorB" class="colorDisplay">
+                            </div>
+                        </div>
                         <div class="alert alert-info">
                             <strong>Pour aller plus loin:</strong> en informatique, les couleurs sont codées au format RGB (ou Rouge Vert Bleu) : ce format est constitué de trois chiffres entre 0 et 255 indiquant les quantitées de rouge, vert et bleu dans la couleur. Par exemple <em>255 0 0</em> est rouge pur, <em>0 255 255</em> est cyan et <em>255 0 255</em> est violet. Il est important de noter que <em>0 0 0</em> est noir et <em>255 255 255</em> blanc !
                         </div>
@@ -118,12 +137,12 @@ fill(255, 255, 255); // Choisir la couleur de remplissage
                     <div class="collapse" id="code4Collapse">
                         <pre class="mb-0"><code class="javascript">
 ellipse(50, 50, 80, 80); // Dessiner une ellipse en haut à gauche
-ellipse(mouseX, mouseY, 80, 80); // Dessiner une ellipse sur le curseur de la souris
+ellipse(mouseX, mouseY, 80, 80); // Dessiner une ellipse la ou pointe ta souris
                         </code></pre>
-                        L'instruction <i>ellipse(x, y, r1, r2)</i> permet comme son nom l'indique de dessiner une ellipse. En particulier, un cercle est une ellipse avec <i>r1</i> et <i>r2</i> égaux. Les deux premiers paramètres (<i>x</i> et <i>y</i>) contrôlent où l'ellipse sera dessinée sur l'écran, et <i>r1</i> et <i>r2</i> contrôlent la taille de l'ellipse. Fait varier les paramètres de la première instruction pour voir les changement !<br/>
-                        La deuxième version de l'instruction (que tu devra utiliser pour compléter ton projet) dessine l'ellipse là ou pointe ta souris.
+                        L'instruction <i>ellipse(x, y, r1, r2)</i> permet comme son nom l'indique de dessiner une ellipse (un cercle allongé). Les deux premiers paramètres (<i>x</i> et <i>y</i>) contrôlent où l'ellipse sera dessinée sur l'écran, et <i>r1</i> et <i>r2</i> contrôlent la taille de l'ellipse. Fait varier les paramètres de la première instruction pour voir les changement !<br/>
+                        La deuxième version de l'instruction (que tu devras utiliser pour compléter ton projet) dessine l'ellipse là ou pointe ta souris.
                         <div class="alert alert-info">
-                            <strong>Pour aller plus loin:</strong> bien sur, il y a beaucoup d'autres formes que tu peux dessiner ! Experimentes avec <i>rect(120, 70, 40, 80);</i> ou <i>triangle(30, 75, 58, 20, 86, 75);</i> et essaie de comprendre comment ces instructions fonctionnent !
+                            <strong>Pour aller plus loin:</strong> bien sur, il y a beaucoup d'autres formes que tu peux dessiner ! Experimentes avec <i>rect(120, 70, 40, 80);</i> ou <i>triangle(30, 75, 58, 20, 86, 75);</i>. As tu compris comment ces instructions fonctionnent ?
                         </div>
                     </div>
                 </div>
@@ -151,10 +170,9 @@ if(mouseIsPressed) {
                 </div>
             </div>
 
-            <div class="card mb-5">
+            <div class="card mb-3">
                 <div class="card-body">
-                    Tu sais tout ce dont tu as besoin pour réaliser ton projet ! Essaie de combiner les éléments ci-dessus pour reproduire l'exemple montré au début de la séance.<br/>
-                    Si tu es vraiment trop en difficulté, un dernier mot de passe te donnera accès à la solution ci-dessous, mais essaie de la chercher par toi même d'abord !
+                    Si tu as vraiment rencontré trop de difficultés, et que tu n'as pas encore réussi à terminer ton programme, un dernier mot de passe te donnera accès à la solution ci-dessous, mais essaie de la chercher par toi même d'abord !
                 </div>
             </div>
 
@@ -187,6 +205,12 @@ function draw() {
                 </div>
             </div>
 
+            <div class="card mb-3">
+                <div class="card-body">
+                    Félicitation ! Tu as terminé ton programme et ta mission s'est achevée avec succès ! Bravo ! Si tu as encore le temps, n'hésite pas à jouer un peu avec ton programme, par exemple modifier les paramètres pour voir les changements que cela produit.
+                </div>
+            </div>
+
         </div>
 
         <!-- jQuery and bootstrap scripts -->
@@ -197,6 +221,8 @@ function draw() {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
 
+        <!-- FlexiColorPicker -->
+        <script src="FlexiColorPicker/colorpicker.min.js"></script>
 
         <!-- My own javascript (eventually) -->
         <script src="script.js"></script>
