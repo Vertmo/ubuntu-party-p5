@@ -26,8 +26,8 @@ let cp = ColorPicker(
     document.getElementById('picker'),
     (hex, hsv, rgb) => {
         $('#colorR').val('r: '+rgb.r);
-        $('#colorG').val('g: '+rgb.b);
-        $('#colorB').val('b: '+rgb.g);
+        $('#colorG').val('g: '+rgb.g);
+        $('#colorB').val('b: '+rgb.b);
         $('.colorDisplay').each(function(i, obj) {
             $(obj).css('background-color', hex);
             if(rgb.r + rgb.b + rgb.g > 3*255/2) {
