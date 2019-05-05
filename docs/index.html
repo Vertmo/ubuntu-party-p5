@@ -15,18 +15,10 @@
     </head>
     <body>
         <nav class="navbar navbar-expand navbar-dark bg-ubuntu shadow-sm mb-5">
-            <span class="navbar-brand">Découvrir p5.js</span>
-            <ul class="navbar-nav nav-pills ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Activité 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="activity3.html">Activité 2</a>
-                </li>
-            </ul>
+            <span class="navbar-brand">Introduction à la programmation</span>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="https://editor.p5js.org/">Editeur p5.js</a>
+                    <a class="nav-link" href="https://p5js.org/reference/">Référence p5.js</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://www.ubuntu-paris.org/">Site de l'Ubuntu Party</a>
@@ -36,195 +28,23 @@
 
         <div class="container">
             <div class="alert alert-primary">
-                Ta mission (si toutefois tu l'acceptes) : recréer le programme montré au début de la séance. Pour rappel, tu dois en déplaçant ta souris déplacer un cercle, qui dois changer de couleur si tu appuies sur le bouton de ta souris.<br/>
-                Tu peux commencer à travailler sur le programme vide à cette adresse : <a href="https://editor.p5js.org/Vertmo/sketches/ByrIfUgk4">https://editor.p5js.org/Vertmo/sketches/ByrIfUgk4</a><br/>
-                Pour t'aider, tu pourras utiliser les indices ci-dessous. Pour y accéder, tu auras besoin des mots de passe qui se trouvent dans la boite sur la table centrale. Il est conseillé d'accéder aux indices <strong>au fur et à mesure</strong> de ta progression, et donc de venir chercher un mot de passe au moment où tu en as besoin.
+                Les exercices ci-dessous sont à faire au fur et à mesure de l'atelier. Si vous avez du mal à comprendre l'un des exercices, n'hésitez pas à me demander, je suis là pour ça !
             </div>
 
             <!-- Indices -->
             <div class="card mb-5">
-                <div class="card-header">Structure</div>
+                <div class="card-header">Bases d'un programme</div>
                 <div class="card-body">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="code1Passwd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-primary btn-ubuntu" id="code1Button">Voir l'indice</button>
-                        </div>
-                    </div>
-                    <div class="collapse" id="code1Collapse">
-                        <pre class="mb-0"><code class="javascript">
-function setup() {
-    // Des choses qui s'exécutent au début
-}
-
-function draw() {
-    // Des choses qui se répètent
-}
-                        </code></pre>
-                        La majorité de ton code doit être écrite dans ces deux blocs de code. Le code dans <i>setup</i> s'exécutera une seule fois au début du programme, donc utilises le pour faire les réglages au début ! Le code de <i>draw</i> lui se répète jusqu'a ce que tu stoppes le programme, et permettra de dessiner les ronds. C'est donc la que tu mettras les instructions de dessin !
-                    </div>
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr><th>Objectif:</th><td>Découvrir la structure d'un code p5js, la syntaxe générale du langage, les commentaires</td></tr>
+                            <tr><th>Url:</th><td><a href="https://editor.p5js.org/Vertmo/sketches/SnFer_Q8n">https://editor.p5js.org/Vertmo/sketches/SnFer_Q8n</a></td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-
-            <div class="card mb-5">
-                <div class="card-header">Créer un sketch</div>
-                <div class="card-body">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="code2Passwd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-primary btn-ubuntu" id="code2Button">Voir l'indice</button>
-                        </div>
-                    </div>
-                    <div class="collapse" id="code2Collapse">
-                        <pre class="mb-0"><code class="javascript">
-createCanvas(640, 480);
-                        </code></pre>
-                        Cette simple instruction permet d'ouvrir une animation, ou "canvas". Les deux paramètres 640 et 480 permettent de spécifier la largeur et la hauteur de l'image animée en pixels. Cette instruction ne doit être exécutée qu'une seule fois, c'est pour cela qu'elle est placée dans <i>setup</i>.
-                        <div class="alert alert-info">
-                            <strong>Pour aller plus loin:</strong> le pixel est l'unité traditionnelle de taille des images en informatique. L'écran que tu regardes en ce moment possède une résolution maximum (en pixels), donc si tu regardes assez bien tu verras que l'image sur l'écran est en fait constituée de petits carrés de différentes couleurs: ce sont les pixels. Ci-dessous, une illustration de la différence que le nombre de pixel fait : plus une image a de pixel, plus elle est détaillée.<br/>
-                            <div style="display: flex; justify-content: space-between">
-                                <img src="hab.jpg" alt="hot air balloons" width="480">
-                                <img src="hab-pixel.jpg" alt="pixelated hot air balloons" width="480">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-5">
-                <div class="card-header">Couleurs</div>
-                <div class="card-body">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="code3Passwd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-primary btn-ubuntu" id="code3Button">Voir l'indice</button>
-                        </div>
-                    </div>
-                    <div class="collapse" id="code3Collapse">
-                        <pre class="mb-0"><code class="javascript">
-stroke(0, 0, 0); // Choisir la couleur de dessin
-fill(255, 255, 255); // Choisir la couleur de remplissage
-                        </code></pre>
-                        Les deux instructions ci-dessus permettent de manipuler les couleurs : stroke permet de changer la couleur avec laquelle les formes seront dessinées (ici en noir) et fill permet de changer la couleur avec laquelle les formes seront remplies ou "coloriées" (ici en blanc).
-                        <div class="mb-3" style="text-align: center">
-                            Tu peux utilise le sélecteur ci-dessous pour choisir une couleur:<br/>
-                            <div style="display: flex; justify-content:center">
-                                <div id="picker" class="picker"></div>
-                                <div id="slide" class="slide"></div>
-                            </div>
-                            <div style="clear:both">
-                                <input readonly id="colorR" class="colorDisplay">
-                                <input readonly id="colorG" class="colorDisplay">
-                                <input readonly id="colorB" class="colorDisplay">
-                            </div>
-                        </div>
-                        <div class="alert alert-info">
-                            <strong>Pour aller plus loin:</strong> en informatique, les couleurs sont codées au format RGB (ou Rouge Vert Bleu) : ce format est constitué de trois chiffres entre 0 et 255 indiquant les quantitées de rouge, vert et bleu dans la couleur. Par exemple <em>255 0 0</em> est rouge pur, <em>0 255 255</em> est cyan et <em>255 0 255</em> est violet. Il est important de noter que <em>0 0 0</em> est noir et <em>255 255 255</em> blanc !
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-5">
-                <div class="card-header">Dessiner des formes</div>
-                <div class="card-body">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="code4Passwd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-primary btn-ubuntu" id="code4Button">Voir l'indice</button>
-                        </div>
-                    </div>
-                    <div class="collapse" id="code4Collapse">
-                        <pre class="mb-0"><code class="javascript">
-ellipse(50, 50, 80, 80); // Dessiner une ellipse en haut à gauche
-ellipse(mouseX, mouseY, 80, 80); // Dessiner une ellipse la ou pointe ta souris
-                        </code></pre>
-                        L'instruction <i>ellipse(x, y, r1, r2)</i> permet comme son nom l'indique de dessiner une ellipse (un cercle allongé). Les deux premiers paramètres (<i>x</i> et <i>y</i>) contrôlent où l'ellipse sera dessinée sur l'écran, et <i>r1</i> et <i>r2</i> contrôlent la taille de l'ellipse. Fait varier les paramètres de la première instruction pour voir les changement !<br/>
-                        La deuxième version de l'instruction (que tu devras utiliser pour compléter ton projet) dessine l'ellipse là ou pointe ta souris.
-                        <div class="alert alert-info">
-                            <strong>Pour aller plus loin:</strong> bien sur, il y a beaucoup d'autres formes que tu peux dessiner ! Experimentes avec <i>rect(120, 70, 40, 80);</i> ou <i>triangle(30, 75, 58, 20, 86, 75);</i>. As tu compris comment ces instructions fonctionnent ?
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-5">
-                <div class="card-header">Conditions</div>
-                <div class="card-body">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="code5Passwd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-primary btn-ubuntu" id="code5Button">Voir l'indice</button>
-                        </div>
-                    </div>
-                    <div class="collapse" id="code5Collapse">
-                        <pre class="mb-0"><code class="javascript">
-if(mouseIsPressed) {
-  // Ce code sera exécuté si le bouton de la souris est pressé
-} else {
-  // Celui la sera exécuté si il n'est pas pressé
-}
-                        </code></pre>
-                        La structure <i>if...else</i> te permet d'accomplir une action ou une autre en fonction d'une condition. Ici le code dans <i>if() { ... }</i> s'exécutera quand tu appuieras sur le bouton de ta souris, et le code dans <i>else { ... }</i> quand tu n'appuieras pas. Bien sur pour voir la différence, il faudra que le <i>if...else</i> s'exécute plusieurs fois, donc essaie de le placer dans <i>draw</i>.
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-3">
-                <div class="card-body">
-                    Si tu as vraiment rencontré trop de difficultés, et que tu n'as pas encore réussi à terminer ton programme, un dernier mot de passe te donnera accès à la solution ci-dessous, mais essaie de la chercher par toi même d'abord !
-                </div>
-            </div>
-
-            <div class="card mb-5">
-                <div class="card-header">Solution complète</div>
-                <div class="card-body">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="code6Passwd" placeholder="Mot de passe" aria-label="Mot de passe" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-primary btn-ubuntu" id="code6Button">Voir l'indice</button>
-                        </div>
-                    </div>
-                    <div class="collapse" id="code6Collapse">
-                        <pre class="mb-0"><code class="javascript">
-function setup() {
-  createCanvas(640, 480);
-}
-
-function draw() {
-  if(mouseIsPressed) {
-    fill(0, 0, 0);
-  } else {
-    fill(255, 255, 255);
-  }
-  ellipse(mouseX, mouseY, 80, 80);
-}
-                        </code></pre>
-                        Tu peux voir le code en action à cette adresse : <a href="https://editor.p5js.org/Vertmo/sketches/Skn_x_VAX">https://editor.p5js.org/Vertmo/sketches/Skn_x_VAX</a>.
-                    </div>
-                </div>
-            </div>
-
-            <div class="card mb-3">
-                <div class="card-body">
-                    Félicitation ! Tu as terminé ton programme et ta mission s'est achevée avec succès ! Bravo ! Si tu as encore le temps, n'hésite pas à jouer un peu avec ton programme, par exemple modifier les paramètres pour voir les changements que cela produit.
-                </div>
-            </div>
-
         </div>
 
-        <!-- jQuery and bootstrap scripts -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <!-- highlight.js script -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
-
-        <!-- FlexiColorPicker -->
-        <script src="FlexiColorPicker/colorpicker.min.js"></script>
-
-        <!-- My own javascript (eventually) -->
         <script src="script.js"></script>
     </body>
 </html>
