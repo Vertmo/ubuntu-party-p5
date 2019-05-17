@@ -67,3 +67,7 @@
 #colorB {
     border-color: blue;
 }
+
+th {
+    width: 10%;
+}
